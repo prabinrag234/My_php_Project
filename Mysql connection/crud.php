@@ -82,6 +82,30 @@
     else{
         echo "Error: ". $conn->error;
     }
+    // Delete data
+    $sql5="delete from MyGuests where id=1";
+    if($conn->query($sql5)===TRUE){
+        echo "Deleted";
+    }
+    else{
+        echo"Not Deleted with error".conn->error;
+    }
+    echo "<br>After delete<br>";
+    $sql3="select * from MyGuests";
+    if($result=$conn->query($sql3)){
+        if($result->num_rows>0){
+            while($row=$result->fetch_assoc()){
+                echo "id: ".$row["id"]." Name: ".$row["Name"]."<br>";
+            }
+            $result->free();
+        }
+        else{
+            echo "No records found";
+        }
+    }
+    else{
+        echo "Error: ". $conn->error;
+    }
     $conn->close();
     ?>
     </body>
