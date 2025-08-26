@@ -13,22 +13,31 @@
     }
     echo "Connected successfully<br>";
     // Create database
-    $sql = "USE testdb";
-    if ($conn->query($sql) === TRUE) 
-        {
-        echo "Database used successfully<br>";
-        $sql1 = "Create table MyGuests (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,Name VARCHAR(30) NOT NULL)";
-        if($conn->query($sql1) === TRUE)
-        {
-            echo "Table MyGuests created successfully<br>";
-        } 
-        else
-         {
-        echo "Error creating table: " . $conn->error;
-        }
+    // $sql = "USE testdb";
+    // if ($conn->query($sql) === TRUE) 
+    //     {
+    //     echo "Database used successfully<br>";
+    //     $sql1 = "Create table MyGuests (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,Name VARCHAR(30) NOT NULL)";
+    //     if($conn->query($sql1) === TRUE)
+    //     {
+    //         echo "Table MyGuests created successfully<br>";
+    //     } 
+    //     else
+    //      {
+    //     echo "Error creating table: " . $conn->error;
+    //     }
+    // }
+    // else {
+    //       echo "Error creating database: " . $conn->error;
+    // }
+
+    // Insert data
+    $sql2="insert into MyGuests values(1,'Aswani')";
+    if($conn->query($sql2)===TRUE){
+        echo "Inserted";
     }
-    else {
-          echo "Error creating database: " . $conn->error;
+    else{
+        echo"Not Created with error".conn->error;
     }
     $conn->close();
     ?>
