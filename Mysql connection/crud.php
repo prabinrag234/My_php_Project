@@ -56,6 +56,32 @@
     else{
         echo "Error: ". $conn->error;
     }
+
+    // Update data
+    $sql4="update MyGuests set Name='Aswani Babu' where id=1";
+    if($conn->query($sql4)===TRUE){
+        echo "Updated";
+    }
+    else{
+        echo"Not Updated with error".conn->error;
+    }
+    echo "<br>After update<br>";
+
+    $sql3="select * from MyGuests";
+    if($result=$conn->query($sql3)){
+        if($result->num_rows>0){
+            while($row=$result->fetch_assoc()){
+                echo "id: ".$row["id"]." Name: ".$row["Name"]."<br>";
+            }
+            $result->free();
+        }
+        else{
+            echo "No records found";
+        }
+    }
+    else{
+        echo "Error: ". $conn->error;
+    }
     $conn->close();
     ?>
     </body>
