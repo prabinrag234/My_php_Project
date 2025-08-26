@@ -1,11 +1,3 @@
-<html>
-
-<head>
-    <title>Cookies</title>
-</head>
-
-<body>
-
 <?php 
 //cookie name
 $cookie_name="user";
@@ -20,6 +12,15 @@ if(!isset($_COOKIE[$cookie_name])){
     echo "Value is: ".$_COOKIE[$cookie_name];
 }
 ?>
+<html>
+
+<head>
+    <title>Cookies</title>
+</head>
+
+<body>
+
+
 
 </body>
 
