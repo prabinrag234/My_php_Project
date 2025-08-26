@@ -32,12 +32,29 @@
     // }
 
     // Insert data
-    $sql2="insert into MyGuests values(1,'Aswani')";
-    if($conn->query($sql2)===TRUE){
-        echo "Inserted";
+    // $sql2="insert into MyGuests values(1,'Aswani')";
+    // if($conn->query($sql2)===TRUE){
+    //     echo "Inserted";
+    // }
+    // else{
+    //     echo"Not Created with error".conn->error;
+    // }
+
+    // Read data
+    $sql3="select * from MyGuests";
+    if($result=$conn->query($sql3)){
+        if($result->num_rows>0){
+            while($row=$result->fetch_assoc()){
+                echo "id: ".$row["id"]." Name: ".$row["Name"]."<br>";
+            }
+            $result->free();
+        }
+        else{
+            echo "No records found";
+        }
     }
     else{
-        echo"Not Created with error".conn->error;
+        echo "Error: ". $conn->error;
     }
     $conn->close();
     ?>
