@@ -18,5 +18,3 @@ This repository includes code snippets and mini projects based on the following 
 - ✅ Cookies and session management
 - ✅ Connecting to MySQL and performing CRUD operations
 - ✅ Building a basic login application
-
-## 📁 Folder Structure
